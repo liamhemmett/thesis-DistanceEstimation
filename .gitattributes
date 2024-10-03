@@ -1,0 +1,2 @@
+DistanceEstimation/models/*.onnx filter=lfs diff=lfs merge=lfs -text
+DistanceEstimation/models/*.pth filter=lfs diff=lfs merge=lfs -text
