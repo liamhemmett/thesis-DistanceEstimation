@@ -64,8 +64,11 @@ docker run -it image_prediction
 ### Output:
 
 Checkpoint './models/best_model.pth' loaded.
+
 Frame_predicted: 0.055 seconds -- frame 3
+
 Frame_predicted: 0.052 seconds -- frame 5
+
 The output video with distance annotations will be saved as output_video.avi.
 
 ## Credits
