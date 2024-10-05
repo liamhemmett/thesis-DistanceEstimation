@@ -23,13 +23,13 @@ Frames are passed to the CNN model to estimate the camera's focal length.
 Objects are detected and distances are calculated.
 Bounding boxes and distance annotations are drawn on the frame.
 The processed frames are written to an output video file.
-##Usage
-###Set up your models:
+## Usage
+### Set up your models:
 Place the trained CNN model (best_model.pth) and ONNX object detection model (model.onnx) in the appropriate directory.
-###Run the program:
+### Run the program:
 To predict object distances in a video and generate an annotated output video, run the following command:
 
-python main.py
+python predict.py
 
 By default, the program processes the video test_videos/iphone_walking_from_camera.mp4 and outputs the result to output_video.avi.
 
@@ -48,12 +48,20 @@ The program skips every other frame by default (count % 2 == 0) to improve perfo
 ##Outputs
 Annotated Video: The output video will have bounding boxes drawn around detected objects, and the estimated distance of the object from the camera will be annotated above each box.
 Timing Information: The program prints the time taken to process each frame to the console for performance monitoring.
-## Example
-To run the program:
 
-python main.py
+## Docker Support
+A Dockerfile is included at the top level of the project. This Dockerfile contains all necessary dependencies to run the program. You can use Docker to quickly set up the environment by building the Docker image and running the program inside the container.
 
-Output:
+### To build the Docker image:
+Copy code
+
+docker build -t image_prediction .
+
+To run the Docker container:
+
+docker run -it image_prediction
+
+### Output:
 
 Checkpoint './models/best_model.pth' loaded.
 Frame_predicted: 0.055 seconds -- frame 3
