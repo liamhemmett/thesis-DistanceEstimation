@@ -39,14 +39,19 @@ If you need to process a different video or save the output to another location,
 ## Configuration
 ### Parameters
 cnn_model_path: Path to the CNN model used for focal length estimation.
+
 onnx_model_path: Path to the ONNX model used for object detection.
+
 confidence_threshold: Minimum confidence score for object detection (default: 0.7).
+
 nms_threshold: IoU threshold for non-maximum suppression (default: 0.3).
+
 max_runs: The number of frames after which to use the average focal length for predictions.
 ### Frame Skipping
 The program skips every other frame by default (count % 2 == 0) to improve performance. You can adjust this in the predict_video() method.
-##Outputs
+## Outputs
 Annotated Video: The output video will have bounding boxes drawn around detected objects, and the estimated distance of the object from the camera will be annotated above each box.
+
 Timing Information: The program prints the time taken to process each frame to the console for performance monitoring.
 
 ## Docker Support
