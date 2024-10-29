@@ -12,7 +12,7 @@ Video Processing Pipeline: Processes video frames with frame skipping to optimiz
 ### CNN Focal Length Estimation
 The program loads a CNN model (from best_model.pth) to predict the focal length of each video frame.
 After processing a predefined number of frames (max_runs), the system averages the focal length predictions and uses the average for subsequent frames to stabilize predictions.
-###Object Detection and Distance Estimation
+### Object Detection and Distance Estimation
 The ONNX object detection model (from model.onnx) is used to detect objects in each frame.
 Detected objects' bounding boxes are processed with non-maximum suppression (NMS) to eliminate overlapping boxes.
 The distance of each detected object from the camera is estimated using the focal length, object dimensions, and image properties.
